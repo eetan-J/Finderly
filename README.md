@@ -2,11 +2,22 @@
 
 A Finder-style file manager and Preview-style image/PDF viewer for Windows, written in C# / WPF (.NET 8).
 
-- Icon, List, Column and Gallery views, tabs, sidebar, path bar, Quick Look (Space), Get Info, tags, undo
-- Preview viewer with thumbnails, zoom, rotate and markup
-- Software rendering by default; run with `--gpu` to try hardware rendering
+## Features
+- Icon, List, Column and Gallery views, tabs, sidebar, path bar and status bar
+- Quick Look (press Space), Get Info, tags, drag and drop, undo
+- Preview viewer with thumbnails, zoom, rotate and markup for images and PDFs
 
-Build: `dotnet publish -c Release -r win-x64 --self-contained true -o publish`
-Installer: compile `Finderly.iss` with Inno Setup 6.
+## Install
+Download **Finderly-Setup.exe** from the [latest release](https://github.com/eetan-J/Finderly/releases/latest) and run it. It includes the .NET runtime, so nothing else is needed. The installer isn't code-signed, so Windows SmartScreen may warn you: choose *More info* then *Run anyway*.
 
-Original icons; not affiliated with Apple.
+It uses software rendering by default; launch with `--gpu` to try hardware rendering.
+
+## Build
+`dotnet publish -c Release -r win-x64 --self-contained true -o publish`, then compile `Finderly.iss` with Inno Setup 6 for the installer.
+
+## Credits
+Made with [Claude](https://claude.com/claude-code) (Anthropic) for eetan-J. Original icons; not affiliated with Apple.
+
+## Contributors
+- [eetan-J](https://github.com/eetan-J)
+- Claude (Anthropic), AI coding assistant
