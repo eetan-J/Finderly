@@ -142,7 +142,7 @@ namespace Finderly.Core
                     case LocKind.Folder: return Format.FolderTitle(Path);
                     case LocKind.Recents: return "Recents";
                     case LocKind.Applications: return "Applications";
-                    case LocKind.Computer: return Environment.MachineName;
+                    case LocKind.Computer: return Native.PcName;
                     case LocKind.Trash: return "Trash";
                     case LocKind.Tag: return Tag;
                     case LocKind.Search: return "Searching “" + (SearchWholePC ? "This PC" : Format.FolderTitle(Path)) + "”";

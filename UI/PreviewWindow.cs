@@ -440,7 +440,7 @@ namespace Finderly.UI
         {
             if (viewer.Content is Grid g)
             {
-                g.MinWidth = Math.Max(0, viewer.ViewportWidth); g.MinHeight = Math.Max(0, viewer.ViewportHeight);
+                g.MinWidth = Math.Max(0, viewer.ViewportWidth - 40); g.MinHeight = Math.Max(0, viewer.ViewportHeight - 40);
                 g.Margin = new Thickness(20);
             }
         }

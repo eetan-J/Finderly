@@ -90,7 +90,7 @@ namespace Finderly.Views
             Header("locations", "Locations");
             if (!s.CollapsedSections.Contains("locations"))
             {
-                rows.Add(new SidebarRow { Id = "::computer", Title = Environment.MachineName, Glyph = "computer", Loc = Location.Computer });
+                rows.Add(new SidebarRow { Id = "::computer", Title = Native.PcName, Glyph = "computer", Loc = Location.Computer });
                 foreach (var d in DriveInfo.GetDrives())
                 {
                     try

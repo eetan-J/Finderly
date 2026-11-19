@@ -83,7 +83,7 @@ namespace Finderly.Views
 
         protected override bool HorizontalScroll => false;
 
-        double IconSize => rowH - 6;
+        double IconSize => Math.Max(1, rowH - 6);
 
         Rect NameTextRect(Entry e)
         {

@@ -13,6 +13,8 @@ namespace Finderly.Core
 {
     internal static class Native
     {
+        /// <summary>Computer name shown in the sidebar; FINDERLY_DEMO=1 swaps in a generic name (used for README screenshots).</summary>
+        public static string PcName => Environment.GetEnvironmentVariable("FINDERLY_DEMO") == "1" ? "Demo PC" : Environment.MachineName;
         // ---------- DWM ----------
         [StructLayout(LayoutKind.Sequential)] public struct MARGINS { public int L, R, T, B; }
         [DllImport("dwmapi.dll")] public static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int val, int size);

@@ -1,6 +1,6 @@
-[Setup]
+﻿[Setup]
 AppName=Finderly
-AppVersion=1.0.0
+AppVersion=1.0.1
 AppPublisher=Finderly
 DefaultDirName={autopf}\Finderly
 DefaultGroupName=Finderly
@@ -36,3 +36,4 @@ Root: HKA; Subkey: "Software\Classes\*\shell\FinderlyPreview\command"; ValueType
 
 [Run]
 Filename: "{app}\Finderly.exe"; Description: "Launch Finderly"; Flags: nowait postinstall skipifsilent
+

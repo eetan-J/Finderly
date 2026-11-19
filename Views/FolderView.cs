@@ -371,8 +371,10 @@ namespace Finderly.Views
             if (Mode != ViewMode.Column && sel.Count > 0) { active.SelectMany(sel.Where(s => active.Entries.Any(e => s.Equals(e.Item)))); }
             ViewChanged?.Invoke();
             SelectionChanged?.Invoke();
+            focusAfterBuild = Mode == ViewMode.Column;
             FocusSurface();
         }
+        bool focusAfterBuild;
 
         public void SetSort(SortKey k, bool? asc = null)
         {
@@ -508,9 +510,11 @@ namespace Finderly.Views
             {
                 colStack.Children.Clear(); columns.Clear();
                 AddColumn(Loc.Path, sortedRoot);
+                focusAfterBuild = true;
             }
             else { RefreshColumns(); }
             active = columns.LastOrDefault();
+            if (focusAfterBuild) { focusAfterBuild = false; Dispatcher.BeginInvoke(new Action(() => { if (!(Keyboard.FocusedElement is TextBox)) FocusSurface(); }), System.Windows.Threading.DispatcherPriority.Loaded); }
             ShowEmpty(null);
         }
 
